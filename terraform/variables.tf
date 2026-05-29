@@ -39,3 +39,9 @@ variable "private_db_subnet_cidrs" {
   type        = list(string)
   default     = ["10.0.21.0/24", "10.0.22.0/24"]
 }
+
+variable "allowed_ssh_cidr" {
+  description = "CISR allow SSH to bastion (home IP)"
+  type        = string
+  default     = "0.0.0.0/0" //make it 0.0.0.0 for now (curl ifconfig.me to get your IP)
+}
