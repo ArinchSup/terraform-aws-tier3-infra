@@ -45,3 +45,9 @@ variable "allowed_ssh_cidr" {
   type        = string
   default     = "0.0.0.0/0" //make it 0.0.0.0 for now (curl ifconfig.me to get your IP)
 }
+
+variable "ssh_public_key_path" {
+  description = "Path to your SSH public key file"
+  type        = string
+  default     = "~/.ssh/terraform_3tier.pub"
+}
