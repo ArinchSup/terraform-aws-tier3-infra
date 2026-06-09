@@ -51,3 +51,24 @@ variable "ssh_public_key_path" {
   type        = string
   default     = "~/.ssh/terraform_3tier.pub"
 }
+
+variable "instance_type" {
+  description = "ec2 instance type for app"
+  type        = string
+  default     = "13.micro"
+}
+
+variable "asg_min_size" {
+  type    = number
+  default = 2
+}
+
+variable "asg_max_size" {
+  type    = number
+  default = 4
+}
+
+variable "asg_desired_capacity" {
+  type    = number
+  default = 2
+}
