@@ -72,3 +72,38 @@ variable "asg_desired_capacity" {
   type    = number
   default = 2
 }
+
+variable "db_username" {
+  description = "Master DB username"
+  type        = string
+  default     = "appuser"
+}
+variable "db_password" {
+  description = "Master DB password"
+  type        = string
+  sensitive   = true
+}
+
+variable "db_name" {
+  description = "initial database name"
+  type        = string
+  default     = "appdb"
+}
+
+variable "db_instance_class" {
+  description = "RDS instance"
+  type        = string
+  default     = "db.t3.micro"
+}
+
+variable "db_allocated_storage" {
+  description = "Storage capacity"
+  type        = number
+  default     = 20
+}
+
+variable "db_multi_az" {
+  description = "Multi AZZ for RDS"
+  type        = bool
+  default     = false
+}
