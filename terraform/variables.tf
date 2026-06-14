@@ -55,7 +55,7 @@ variable "ssh_public_key_path" {
 variable "instance_type" {
   description = "ec2 instance type for app"
   type        = string
-  default     = "13.micro"
+  default     = "t3.micro"
 }
 
 variable "asg_min_size" {
