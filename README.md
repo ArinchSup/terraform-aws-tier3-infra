@@ -1,6 +1,6 @@
 # 3-Tier AWS Infrastructure with Terraform
 
-A production-style three-tier AWS architecture built entirely with Terraform. Public and private networks are divided across subnets, with an auto-scaling application tier behind an Application Load Balancer and a Multi-AZ-capable PostgreSQL RDS database — all defined as Infrastructure as Code (IaC).
+A production-style three-tier AWS architecture built entirely with Terraform. Public and private networks are divided across subnets, with an auto-scaling application tier behind an Application Load Balancer and a Multi-AZ-capable PostgreSQL RDS database — all defined as Infrastructure as Code (IaC) (Terraform).
 
 ## Architecture
 
@@ -38,7 +38,7 @@ flowchart TD
 
 ## What It Provisions
 
-The configuration creates a complete three-tier environment (~32 resources):
+The configuration creates a complete three-tier environment (~32 resources) (When we do the terraform apply there should e 32 resources created):
 
 - **Networking** — a VPC, an Internet Gateway, six subnets (public, private-app, private-db, each across two AZs), a NAT Gateway with an Elastic IP, and three route tables with their subnet associations.
 - **Security** — four security groups (ALB, bastion, app, RDS), each scoped to accept traffic only from the tier in front of it.
@@ -108,7 +108,7 @@ ssh-keygen -t ed25519 -C "terraform-3tier" -f ~/.ssh/terraform_3tier
 
 ## Cost
 
-Running the full stack 24/7 costs roughly **$80/month**, dominated by the NAT Gateway (~$32) and ALB (~$16). Hourly, that is about **$0.11**.
+Running the full stack 24/7 costs roughly **$80/month**, dominated by the NAT Gateway ($32) and ALB ($16). Hourly, that is about **$0.11**.
 
 This is designed to be applied, tested, and destroyed in a single session — applying for an hour of testing costs only a few cents. Destroy the stack when not in use:
 
@@ -116,9 +116,9 @@ This is designed to be applied, tested, and destroyed in a single session — ap
 terraform destroy
 ```
 
-## Roadmap
+## Roadmap (development path)
 
-Planned enhancements that build on this foundation:
+Planned that build on this foundation:
 
 - **Remote state backend** — migrate state to S3 with DynamoDB locking for safe collaboration
 - **Refactor into modules** — extract reusable VPC, compute, and database modules
