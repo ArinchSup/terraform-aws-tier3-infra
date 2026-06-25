@@ -8,11 +8,12 @@ terraform {
     }
   }
   backend "s3" {
-    bucket         = "terraform-tier3-bucket-ar"
-    key            = "tier3/dev/terraform.tfstate"
-    region         = "ap-southeast-1"
-    dynamodb_table = "tier3-dev-dynamodb"
-    encrypt        = true
+    bucket = "terraform-tier3-bucket-ar"
+    key    = "tier3/dev/terraform.tfstate"
+    region = "ap-southeast-1"
+    #dynamodb_table = "tier3-dev-dynamodb" this is old one
+    use_lockfile = true #use this instead
+    encrypt      = true
   }
 }
 
