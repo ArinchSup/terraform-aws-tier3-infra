@@ -1,5 +1,7 @@
 # 3-Tier AWS Infrastructure with Terraform
 
+##remote state backend was decommissioned; reconfigure to redeploy (in provider.tf and backend.tf)
+
 A production-style three-tier AWS architecture built entirely with Terraform. Public and private networks are divided across subnets, with an auto-scaling application tier behind an Application Load Balancer and a Multi-AZ-capable PostgreSQL RDS database — all defined as Infrastructure as Code (IaC) (Terraform).
 
 ## Architecture
